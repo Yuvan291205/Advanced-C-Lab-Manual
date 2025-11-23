@@ -1,5 +1,6 @@
 
-
+### NAME: YUVAN M
+### REG NO: 212223240188
 EXP NO:21 C PROGRAM TO CREATE A FUNCTION TO FIND THE GREATEST NUMBER
 Aim:
 To write a C program to create a function to find the greatest number
@@ -12,10 +13,38 @@ Algorithm:
 5.	Call the max_of_four function with the input integers and store the result in the greater variable
  
 Program:
-//type your code here
+```
+#include <stdio.h>
 
+// Function to find the maximum of four numbers
+int max_of_four(int a, int b, int c, int d) {
+    int max = a;
+
+    if (b > max)
+        max = b;
+    if (c > max)
+        max = c;
+    if (d > max)
+        max = d;
+
+    return max;
+}
+
+int main() {
+    int n1, n2, n3, n4, greater;
+
+
+    scanf("%d %d %d %d", &n1, &n2, &n3, &n4);
+
+    greater = max_of_four(n1, n2, n3, n4);
+
+    printf("The greatest number is: %d\n", greater);
+
+    return 0;
+}
+```
 Output:
-//paste your output here
+<img width="992" height="353" alt="image" src="https://github.com/user-attachments/assets/e7ee6359-cb2f-4a79-93fd-efd70288563e" />
 
 Result:
 Thus, the program  that create a function to find the greatest number is verified successfully.
@@ -36,10 +65,36 @@ Algorithm:
 7.	Call the calculate_the_max function with input values.
  
 Program:
-//type your code here
-
+```
+#include<stdio.h>
+int main()
+{
+    int n,k;
+    scanf("%d %d",&n,&k);
+    int max_and = 0,max_or = 0,max_xor =0;
+    for(int i = 1;i<=n;i++)
+    {
+        for(int j=i+1;j<=n;j++)
+        {
+            int and_val = i&j;
+            int or_val = i|j;
+            int xor_val = i^j;
+            
+            if(and_val < k && and_val > max_and)
+                max_and = and_val;
+                
+            if(or_val < k && or_val > max_or)
+                max_or = or_val;
+                
+            if(xor_val < k && xor_val > max_xor)
+                max_xor = xor_val;
+        }
+    }
+    printf("%d\n%d\n%d\n",max_and,max_or,max_xor); 
+}
+```
 Output:
-//paste your output here
+<img width="1083" height="364" alt="image" src="https://github.com/user-attachments/assets/24e4bb8b-b948-4270-a065-6f1ca01ee7ae" />
 
 Result:
 Thus, the program to print the maximum values for the AND, OR and XOR comparisons
@@ -59,10 +114,57 @@ Algorithm:
 5.	Use a for loop to iterate over the queries.
  
 Program:
-//type your code here
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int total_number_of_shelves, total_number_of_queries;
+    scanf("%d", &total_number_of_shelves);
+    scanf("%d", &total_number_of_queries);
+
+    int *total_number_of_books = calloc(total_number_of_shelves, sizeof(int));
+
+    int **total_number_of_pages = malloc(total_number_of_shelves * sizeof(int *));
+    for (int i = 0; i < total_number_of_shelves; i++) {
+        total_number_of_pages[i] = malloc(1100 * sizeof(int)); 
+    }
+
+    for (int q = 0; q < total_number_of_queries; q++) {
+        int type;
+        scanf("%d", &type);
+
+        if (type == 1) {
+            int x, y;
+            scanf("%d %d", &x, &y);
+            int book_index = total_number_of_books[x];
+            total_number_of_pages[x][book_index] = y;
+            total_number_of_books[x]++;
+        } 
+        else if (type == 2) {
+            int x, y;
+            scanf("%d %d", &x, &y);
+            printf("%d\n", total_number_of_pages[x][y]);
+        } 
+        else if (type == 3) {
+            int x;
+            scanf("%d", &x);
+            printf("%d\n", total_number_of_books[x]);
+        }
+    }
+
+    for (int i = 0; i < total_number_of_shelves; i++) {
+        free(total_number_of_pages[i]);
+    }
+    free(total_number_of_pages);
+    free(total_number_of_books);
+
+    return 0;
+}
+```
 
 Output:
-//paste your output here
+<img width="990" height="292" alt="image" src="https://github.com/user-attachments/assets/dcdaf431-12e8-49fa-b8cc-9d844c3d1211" />
 
 
 Result:
@@ -86,10 +188,24 @@ Algorithm:
 
 
 Program:
-//type your code here
-
+```
+#include<stdio.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int arr[n];
+    int sum = 0;
+    for(int i = 0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+        sum+= arr[i];
+    }
+    printf("%d",sum);
+}
+```
 Output:
-//paste your output here
+<img width="1293" height="212" alt="image" src="https://github.com/user-attachments/assets/cc49d492-a4d3-4dfb-94bc-ecb085faa919" />
 
  
 
@@ -120,10 +236,28 @@ o	If a character is not a space, it may belong to a word. If it's the first non-
 
 
 Program:
-//type your code here
-
+```
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char str[100];
+    int count =0;
+    fgets(str,sizeof(str),stdin);
+    int i = 0;
+    while (str[i]!='\0'){
+        if (str[i]==' ' && str[i+1]!=' ')
+        {
+            count++;
+        }
+        i++;
+    }
+    printf("%d",count+1);
+    
+}
+```
 Output:
-//paste your output here
+<img width="990" height="199" alt="image" src="https://github.com/user-attachments/assets/1dc33620-3baf-4072-8138-062a38303643" />
 
 
 
