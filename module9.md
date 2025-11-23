@@ -1,3 +1,6 @@
+# NAME: YUVAN M
+# REG NO: 212223240188
+
 EXP NO:11 C PROGRAM TO DISPLAY STACK ELEMENTS USING AN ARRAY.
 
 Aim:
@@ -13,11 +16,24 @@ Algorithm:
  
 Program:
 
-//type your code here
-
+```
+int stack[100],top,i;
+void display()
+{
+    if(top==-1){
+        printf("Stack is empty");
+    }
+    
+    else{
+        for(i=top;i>=0;i--){
+            printf("%d->",stack[i]);
+        }
+    }
+}
+```
 Output:
 
-//paste your output here
+<img width="994" height="662" alt="image" src="https://github.com/user-attachments/assets/61b48230-58a2-4011-ada8-5e3b43cd584d" />
 
 
 
@@ -36,11 +52,23 @@ Algorithm:
  
 Program:
 
-//type your code here
-
+```
+int size=3,top=-1;
+float stack[100];
+void push (float data)
+{
+    if(top==size-1){
+        printf("stack is full\n");
+    }
+    else{
+        top++;
+        stack[top] = data;
+    }
+}
+```
 Output:
 
-//paste your output here
+<img width="989" height="589" alt="image" src="https://github.com/user-attachments/assets/845a4234-a1ae-41da-84c3-f68d50a95876" />
 
 
 
@@ -62,11 +90,24 @@ Algorithm:
  
 Program:
 
-//type your code here
-
+```
+float queue[50];
+int front=-1,rear=-1;
+void display()
+{
+    if(front == -1){
+        printf("No elements to display\n");
+    }
+    else{
+        for(int i = front;i<=rear;i++){
+            printf("%.1f ",queue[i]);
+        }
+    }
+}
+```
 Output:
 
-//paste your output here
+<img width="991" height="588" alt="image" src="https://github.com/user-attachments/assets/1b9e8eb8-31bd-4e65-90df-3bc8a3c36570" />
 
 
 Result:
@@ -86,11 +127,24 @@ Algorithm:
 
 Program:
 
-//type your code here
-
+```
+float queue[50];
+int size=10,front=-1,rear=-1;
+void enqueue(float data)
+{
+    if(rear<size){
+        if(front==-1){
+            front=0;
+        }
+        rear++;
+        queue[rear] = data;
+    }
+    
+}
+```
 Output:
 
-//paste your output here
+<img width="990" height="492" alt="image" src="https://github.com/user-attachments/assets/93eb61be-c551-4f61-bad7-ce43eefd6bec" />
 
 Result:
 Thus, the program to insert elements in queue using array is verified successfully.
@@ -121,11 +175,21 @@ o	After deletion, check if the front pointer has passed the rear pointer (front 
 
 Program:
 
-//type your code here
-
+```
+int front, rear;
+void dequeue()
+{
+    if(front==-1||front>rear){
+        printf("No elements to display");
+    }
+    else{
+        front++;
+    }
+}
+```
 Output:
 
-//paste your output here
+<img width="999" height="731" alt="image" src="https://github.com/user-attachments/assets/e1382ce2-4254-45e5-b2e5-b341ed276f00" />
 
 
 Result:
